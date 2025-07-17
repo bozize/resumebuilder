@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume Builder | Create Professional Resumes</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+  
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="logo">
+        <i class="fas fa-file-alt"></i>
+        <span>ResumeCraft</span>
+      </a>
+      <div class="nav-links">
+        <a href="dashboard.html" class="btn"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+
+        <a href="#" class="btn" id="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      </div>
+    </div>
+  </nav>
+
+  
+  <div class="builder-container">
+    <aside id="form-area" class="form-card">
+      <h2>Resume Details</h2>
+      <div class="form-section">
+        <h3>Header</h3>
+        <input name="full_name" placeholder="Full Name" required />
+        <input name="professional_title" placeholder="Professional Title" />
+        <input name="email" type="email" placeholder="Email" />
+        <input name="phone" placeholder="Phone" />
+        <input name="linkedin" placeholder="LinkedIn URL" />
+        <input name="github" placeholder="GitHub URL" />
+        <input name="website" placeholder="Website" />
+      </div>
+
+      <div class="form-section">
+        <h3>Profile Summary</h3>
+        <textarea name="summary" rows="4" placeholder="3–5 line summary"></textarea>
+      </div>
+
+      <div class="form-section">
+        <h3>Skills</h3>
+        <div id="skill-list"></div>
+        <button type="button" class="btn" id="add-skill">Add Skill</button>
+      </div>
+
+      <div class="form-section">
+        <h3>Work Experience</h3>
+        <div id="exp-list"></div>
+        <button type="button" class="btn" id="add-exp">Add Experience</button>
+      </div>
+
+      <div class="form-section">
+        <h3>Education</h3>
+        <div id="edu-list"></div>
+        <button type="button" class="btn" id="add-edu">Add Education</button>
+      </div>
+
+      <div class="form-section">
+        <h3>Projects</h3>
+        <div id="proj-list"></div>
+        <button type="button" class="btn" id="add-proj">Add Project</button>
+      </div>
+
+      <div class="form-section">
+        <h3>Languages</h3>
+        <div id="lang-list"></div>
+        <button type="button" class="btn" id="add-lang">Add Language</button>
+      </div>
+
+      <div class="form-section">
+        <h3>Interests</h3>
+        <div id="int-list"></div>
+        <button type="button" class="btn" id="add-int">Add Interest</button>
+      </div>
+
+      <div class="form-section">
+        <h3>Referees</h3>
+        <div id="ref-list"></div>
+        <button type="button" class="btn" id="add-ref">Add Referee</button>
+      </div>
+
+      <button id="export" class="btn primary">Export to PDF</button>
+    </aside>
+
+    <main id="preview-area" class="preview-card"></main>
+  </div>
+
+  <!-- Theme Toggle -->
+  <button class="toggle-theme" id="theme-toggle" title="Toggle theme">
+    <i class="fas fa-moon"></i>
+    <i class="fas fa-sun theme-sun-icon"></i>
+  </button>
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>ResumeBuilder</h3>
+        <p>Create professional resumes quickly and easily with our free online resume builder.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+
+          <li><a href="tips.html">Resume Tips</a></li>
+          <li><a href="about.html">About Us</a></li>
+
+        </ul>
+      </div>
+
+
+    </div>
+    <div class="copyright">
+      &copy; 2025 ResumeBuilder. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/html2pdf.js@0.10.1/dist/html2pdf.bundle.min.js"></script>
+  <script type="module" src="js/builder_v2.js"></script>
+  <script type="module" src="js/theme.js"></script>
+  <script type="module">
+    import { requireAuth } from "./js/auth.js";
+    document.getElementById("back").onclick = () => (window.location.href = "dashboard.html");
+  </script>
+</body>
+
+</html>

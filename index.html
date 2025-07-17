@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Create professional resumes easily with our free online resume builder." />
+  <title>OXResume Builder | Create Professional Resumes Online</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+  
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <span>OXResumeBuilder</span>
+      </a>
+      
+      <div class="nav-actions">
+        
+        <a href="login.html" class="btn secondary">Log In</a>
+        <a href="signup.html" class="btn primary">Sign Up Free</a>
+      </div>
+    </div>
+  </nav>
+
+ 
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Build Your Perfect Resume in Minutes</h1>
+        <p>Create, edit, and store unlimited resumes. Export to PDF with one click—all powered by Supabase.</p>
+        <div class="actions">
+          <a href="signup.html" class="btn primary">Get Started for Free</a>
+          
+        </div>
+      </div>
+      
+    </section>
+
+    <section id="features" class="features-section">
+      <div class="container">
+        <h2>Why Choose Our Resume Builder?</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <i class="fas fa-magic"></i>
+            <h3>Easy to Use</h3>
+            <p>Create a professional resume in minutes with our intuitive drag-and-drop interface.</p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-file-alt"></i>
+            <h3>Professional Templates</h3>
+            <p>Choose from multiple ATS-friendly templates designed by career experts.</p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-cloud"></i>
+            <h3>Cloud Storage</h3>
+            <p>Your resumes are saved automatically and accessible from any device.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-it-works">
+      <div class="container">
+        <h2>How It Works</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>Create an Account</h3>
+            <p>Sign up for free and get instant access to our resume builder.</p>
+          </div>
+        
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>Customize & Download</h3>
+            <p>Fill in your details and download your resume in PDF format.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <div class="container">
+        <h2>What Our Users Say</h2>
+        <div class="testimonial-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <p>"I landed my dream job thanks to the professional resume I created with ResumeBuilder. The templates are amazing!"</p>
+              <div class="testimonial-author">
+                <strong>Sarah J.</strong>
+                <span>Marketing Manager</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <p>"The easiest resume builder I've ever used. I was able to create a polished resume in under 10 minutes."</p>
+              <div class="testimonial-author">
+                <strong>Michael T.</strong>
+                <span>Software Developer</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <h2>Ready to Build Your Resume?</h2>
+        <p>Join thousands of professionals who've found their dream jobs with our resume builder.</p>
+        <a href="signup.html" class="btn primary">Create Your Resume Now</a>
+      </div>
+    </section>
+  </main>
+
+  
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>ResumeBuilder</h3>
+        <p>Create professional resumes quickly and easily with our free online resume builder.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          
+          <li><a href="tips.html">Resume Tips</a></li>
+          <li><a href="about.html">About Us</a></li>
+          
+        </ul>
+      </div>
+      
+      
+    </div>
+    <div class="copyright">
+      &copy; 2025 ResumeBuilder. All rights reserved.
+    </div>
+  </footer>
+
+  
+  <button class="toggle-theme" id="theme-toggle" aria-label="Toggle dark mode">🌓</button>
+
+  <script type="module" src="js/theme.js"></script>
+  <script type="module">
+    import { supabase } from "./js/supabaseClient.js";
+    (async () => {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (user) window.location.href = "dashboard.html";
+    })();
+  </script>
+</body>
+</html>

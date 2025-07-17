@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Create your ResumeBuilder account to start building professional resumes." />
+  <title>Sign Up | OXResume Builder</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <span>OXResumeBuilder</span>
+      </a>
+      <div class="nav-actions">
+        <span class="muted">Already have an account?</span>
+        <a href="login.html" class="btn secondary">Log In</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <main class="auth-container">
+    <div class="card auth-card">
+      <h2>Create Your Account</h2>
+      <p class="muted">Start building your professional resume today</p>
+      
+      <form id="signup-form" class="form">
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input id="email" name="email" type="email" placeholder="Enter your email" required />
+        </div>
+        
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" 
+                 placeholder="Create a password (min 6 characters)" 
+                 required minlength="6" />
+        </div>
+        
+        <button type="submit" class="btn primary full-width">
+          Create Account
+        </button>
+        
+        <p class="auth-footer-text">
+          Already have an account? <a href="login.html">Log in</a>
+        </p>
+      </form>
+    </div>
+  </main>
+
+ 
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>ResumeBuilder</h3>
+        <p>Create professional resumes quickly and easily with our free online resume builder.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#templates">Templates</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Legal</h3>
+        <ul class="footer-links">
+          <li><a href="#privacy">Privacy Policy</a></li>
+          <li><a href="#terms">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; 2025 OXResumeBuilder. All rights reserved.
+    </div>
+  </footer>
+
+  <script type="module" src="js/auth.js"></script>
+  <script type="module" src="js/theme.js"></script>
+</body>
+</html>

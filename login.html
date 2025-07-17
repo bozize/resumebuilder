@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Log in to your ResumeBuilder account to access your resumes." />
+  <title>Log In | Resume Builder</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <span>ResumeBuilder</span>
+      </a>
+      <div class="nav-actions">
+        <span class="muted">Don't have an account?</span>
+        <a href="signup.html" class="btn secondary">Sign Up</a>
+      </div>
+    </div>
+  </nav>
+
+  
+  <main class="auth-container">
+    <div class="card auth-card">
+      <h2>Welcome Back</h2>
+      <p class="muted">Log in to access your account</p>
+      
+      <form id="login-form" class="form">
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input id="email" name="email" type="email" placeholder="Enter your email" required />
+        </div>
+        
+        <div class="form-group">
+          <div class="password-header">
+            <label for="password">Password</label>
+            <a href="#forgot-password" class="forgot-link">Forgot password?</a>
+          </div>
+          <input id="password" name="password" type="password" placeholder="Enter your password" required minlength="6" />
+        </div>
+        
+        <button type="submit" class="btn primary full-width">Log In</button>
+        
+        <p class="auth-footer-text">
+          Don't have an account? <a href="signup.html">Sign up</a>
+        </p>
+      </form>
+    </div>
+  </main>
+
+ 
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>ResumeBuilder</h3>
+        <p>Create professional resumes quickly and easily with our free online resume builder.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#templates">Templates</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Support</h3>
+        <ul class="footer-links">
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#help">Help Center</a></li>
+          <li><a href="#privacy">Privacy Policy</a></li>
+          <li><a href="#terms">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; 2023 ResumeBuilder. All rights reserved.
+    </div>
+  </footer>
+
+  <script type="module" src="js/auth.js"></script>
+  <script type="module" src="js/theme.js"></script>
+</body>
+</html>

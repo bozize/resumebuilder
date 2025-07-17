@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Manage your resumes in your personal dashboard." />
+  <title>Dashboard | Resume Builder</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <span>ResumeBuilder</span>
+      </a>
+      <ul class="nav-links">
+        
+      </ul>
+      <div class="nav-actions">
+        <button id="theme-toggle" class="btn icon-btn" aria-label="Toggle theme">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button id="logout" class="btn secondary">
+          <i class="fas fa-sign-out-alt"></i> Sign out
+        </button>
+      </div>
+    </div>
+  </nav>
+
+ 
+  <main class="dashboard-container">
+  <div class="dashboard-header">
+    <div>
+      <h1>Welcome back, <span id="user-name">User</span>!</h1>
+      <p>Here are your saved resumes</p>
+    </div>
+  </div>
+  
+  <div class="create-resume-container">
+    <button id="new" class="btn primary">
+      <i class="fas fa-plus"></i> Create New Resume
+    </button>
+  </div>
+
+  <div id="list" class="resume-grid">
+    <!-- Resumes will be dynamically inserted here -->
+    
+  </div>
+</main>
+
+
+  
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>ResumeBuilder</h3>
+        <p>Create professional resumes quickly and easily with our free online resume builder.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          
+          <li><a href="tips.html">Resume Tips</a></li>
+          <li><a href="about.html">About Us</a></li>
+          
+        </ul>
+      </div>
+      
+      
+    </div>
+    <div class="copyright">
+      &copy; 2025 ResumeBuilder. All rights reserved.
+    </div>
+  </footer>
+
+  <script type="module" src="js/dashboard.js"></script>
+  <script type="module" src="js/theme.js"></script>
+  <script type="module">
+    import { supabase } from './js/supabaseClient.js';
+    
+    
+    document.addEventListener('DOMContentLoaded', async () => {
+      try {
+        const { data: { user } } = await supabase.auth.getUser();
+        if (user) {
+          const userName = user.email.split('@')[0];
+          document.getElementById('user-name').textContent = userName;
+        }
+      } catch (error) {
+        console.error('Error fetching user data:', error);
+      }
+    });
+  </script>
+</body>
+</html>
